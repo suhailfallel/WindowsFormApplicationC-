@@ -11,6 +11,9 @@ namespace WinFormsAppCSharp
 {
     public partial class Form1 : Form
     {
+
+        //string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
+        SqlConnection con = new SqlConnection(@"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True");
         public Form1()
         {
             InitializeComponent();
@@ -29,30 +32,30 @@ namespace WinFormsAppCSharp
 
         private void insertBTN_Click(object sender, EventArgs e)
         {
-            string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
+            //string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
 
             string sqlQuery = "insert into Employee(EmpId, Name, Adress, PhoneNo, Department, Position) values(" +
                 "'" + empid.Text + "'" + "," + "'" + name.Text + "'" + "," + "'" + address.Text + "'" + "," + "'" + phoneno.Text + "'" + "," +
                 "'" + dept.Text + "'" + "," + "'" + pos.Text + "'" + ")";
 
-            SqlConnection con = new SqlConnection(conString);
+            //SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlCommand cmd = new SqlCommand(sqlQuery, con);
             cmd.CommandText = sqlQuery;
             cmd.ExecuteNonQuery();
             con.Close();
 
-            empid.Clear();
-            name.Clear();
-            address.Clear();
-            phoneno.Clear();
-            dept.Clear();
-            pos.Clear();
+            ClearAll();
 
             BindGrid();
         }
 
         private void clearBTN_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+
+        private void ClearAll()
         {
             empid.Clear();
             name.Clear();
@@ -64,8 +67,8 @@ namespace WinFormsAppCSharp
 
         private void BindGrid()
         {
-            string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
-            SqlConnection con = new SqlConnection(conString);
+            //string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
+            //SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -91,12 +94,13 @@ namespace WinFormsAppCSharp
         private void listallBTN_Click(object sender, EventArgs e)
         {
             BindGrid();
+            search.Clear();
         }
 
         private void editBTN_Click(object sender, EventArgs e)
         {
-            string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
-            SqlConnection con = new SqlConnection(conString);
+            //string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
+            //SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -105,18 +109,13 @@ namespace WinFormsAppCSharp
             cmd.ExecuteNonQuery();
             con.Close();
             BindGrid();
-            name.Clear();
-            empid.Clear();
-            address.Clear();
-            phoneno.Clear();
-            dept.Clear();
-            pos.Clear();
+            ClearAll();
         }
 
         private void dltBTN_Click(object sender, EventArgs e)
         {
-            string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
-            SqlConnection con = new SqlConnection(conString);
+            //string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
+            //SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -129,12 +128,12 @@ namespace WinFormsAppCSharp
 
         private void searchBTN_Click(object sender, EventArgs e)
         {
-            string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
-            SqlConnection con = new SqlConnection(conString);
+            //string conString = @"Data Source=SUHAIL_PV\SQLEXPRESS;Initial Catalog=myDb;Integrated Security=True";
+            //SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Employee where Empid='" + empid.Text + "'";
+            cmd.CommandText = "select * from Employee where Empid='" + search.Text + "'";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

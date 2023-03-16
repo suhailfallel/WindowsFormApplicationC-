@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Subscription\\VS19\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj": {}
+    "D:\\React\\WindowsFormApplicationC-\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj": {}
   },
   "projects": {
-    "D:\\Subscription\\VS19\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj": {
+    "D:\\React\\WindowsFormApplicationC-\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Subscription\\VS19\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj",
+        "projectUniqueName": "D:\\React\\WindowsFormApplicationC-\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj",
         "projectName": "WinFormsAppCSharp",
-        "projectPath": "D:\\Subscription\\VS19\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj",
+        "projectPath": "D:\\React\\WindowsFormApplicationC-\\WinFormsAppCSharp\\WinFormsAppCSharp\\WinFormsAppCSharp.csproj",
         "packagesPath": "C:\\Users\\suhai\\.nuget\\packages\\",
-        "outputPath": "D:\\Subscription\\VS19\\WinFormsAppCSharp\\WinFormsAppCSharp\\obj\\",
+        "outputPath": "D:\\React\\WindowsFormApplicationC-\\WinFormsAppCSharp\\WinFormsAppCSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\suhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
